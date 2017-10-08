@@ -1,0 +1,90 @@
+#READ IN DATA
+#read in 2016 data
+mad <- read.csv("2016data.txt", header=TRUE, sep=",")
+
+#separate into divisions
+west <- mad[mad$Division=="West",]
+midwest <- mad[mad$Division=="Midwest",]
+east <- mad[mad$Division=="East",]
+south <- mad[mad$Division=="South",]
+
+
+
+#FUNCTION
+madness <- function(x) {
+  
+  madf <- function(data){
+    vec <- c()
+    results <- 1:16
+    #first we want to do one function that can output a winner given a matchup
+    winner <- function(i) {
+      hs <- results[1:(len/2)]                                       #high seed teams
+      ls <- results[len:((len/2)+1)]                                 #low seed teams
+      c1 <- c(hs[i],ls[i])                                           #matchup, 1 vs 16, 2 vs 15, etc.
+      
+      # my game outcomes are solely based on seed numbers, nothing else. But this
+      # could be a lot more complex. If I wanted to change it, it goes right here.
+      #But make sure to output the SEED NUMBER
+      d <- hs[i]+ls[i]
+      sample(c1,size=1,prob=c( (d-hs[i])/d,(d-ls[i])/d )) #outcome for one game
+    }
+    
+    #now we want to try and give it matchups for each division and output the results
+    #for each round
+    len <- length(results)
+    while (len > 1){
+      results <- sapply(1:(len/2), winner)            # Used for seed numbers
+      len <- length(results)                          # "    "    "    "
+      vec <- c(vec,results)
+    }
+    
+    data[vec,]
+    
+  }
+  
+  all <- rbind(madf(east),madf(west),madf(midwest),madf(south)) #this is shown in the order of east vs south, west vs midwest btw
+  first <- all[c(1:8,16:23,31:38,46:53),]
+  first$Group <- "First Round"
+  #first
+  second <- all[c(9:12,24:27,39:42,54:57),]
+  second$Group <- "Second Round"
+  #second
+  sweet <- all[c(13,14,28,29,43,44,58,59),]
+  sweet$Group <- "Sweet 16"
+  #sweet
+  f4 <- all[c(15,30,45,60),]
+  f4$Group <- "Final Four"
+  #f4
+  
+  #do the winner function now for the four finalists
+  vec <- c()
+  results <- 1:4
+  winner <- function(i) {
+    hs <- results[1:(len/2)]                                       #high seed teams
+    ls <- results[len:((len/2)+1)]                                 #low seed teams
+    c1 <- c(hs[i],ls[i])                                           #matchup, 1 vs 16, 2 vs 15, etc.
+    d <- hs[i]+ls[i]
+    sample(c1,size=1,prob=c( (d-hs[i])/d,(d-ls[i])/d )) #outcome for one game
+  }
+  len <- length(results)
+  while (len > 1){
+    results <- sapply(1:(len/2), winner)            
+    len <- length(results)
+    vec <- c(vec,results)
+  }
+  
+  finalists <- f4[vec,][1:2,]
+  finalists$Group <- "Finalists"
+  #finalists
+  champ <- f4[vec,][3,]
+  champ$Group <- "Champion"
+  #champ
+  
+  bracket <- rbind(first,second,sweet,f4,finalists,champ)
+  rownames(bracket) <- NULL
+  bracket
+  
+}
+
+#RUN THE FUNCTION
+madness()
