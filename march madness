@@ -88,3 +88,68 @@ madness <- function(x) {
 
 #RUN THE FUNCTION
 madness()
+
+ Seed           Name Division        Group
+1     1 North Carolina     East  First Round
+2     2         Xavier     East  First Round
+3     3  West Virginia     East  First Round
+4     4       Kentucky     East  First Round
+5     5        Indiana     East  First Round
+6    11       Michigan     East  First Round
+7     7      Wisconsin     East  First Round
+8     9     Providence     East  First Round
+9     1         Oregon     West  First Round
+10    2       Oklahoma     West  First Round
+11    3      Texas A&M     West  First Round
+12   13           UNCW     West  First Round
+13   12           Yale     West  First Round
+14    6          Texas     West  First Round
+15   10            VCU     West  First Round
+16    8 Saint Joseph’s     West  First Round
+17    1       Virginia  Midwest  First Round
+18    2 Michigan State  Midwest  First Round
+19   14     Iowa State  Midwest  First Round
+20    4     Iowa State  Midwest  First Round
+21   12    Little Rock  Midwest  First Round
+22   11        Gonzaga  Midwest  First Round
+23    7         Dayton  Midwest  First Round
+24    8     Texas Tech  Midwest  First Round
+25    1         Kansas    South  First Round
+26    2      Villanova    South  First Round
+27   14        Buffalo    South  First Round
+28    4     California    South  First Round
+29    5       Maryland    South  First Round
+30   11  Wichita State    South  First Round
+31    7           Iowa    South  First Round
+32    8       Colorado    South  First Round
+33    1 North Carolina     East Second Round
+34    7      Wisconsin     East Second Round
+35    3  West Virginia     East Second Round
+36    4       Kentucky     East Second Round
+37    8 Saint Joseph’s     West Second Round
+38    2       Oklahoma     West Second Round
+39    6          Texas     West Second Round
+40   12           Yale     West Second Round
+41    1       Virginia  Midwest Second Round
+42    7         Dayton  Midwest Second Round
+43   14     Iowa State  Midwest Second Round
+44    4     Iowa State  Midwest Second Round
+45    1         Kansas    South Second Round
+46    2      Villanova    South Second Round
+47   11  Wichita State    South Second Round
+48    5       Maryland    South Second Round
+49    1 North Carolina     East     Sweet 16
+50    3  West Virginia     East     Sweet 16
+51    8 Saint Joseph’s     West     Sweet 16
+52    2       Oklahoma     West     Sweet 16
+53    1       Virginia  Midwest     Sweet 16
+54    7         Dayton  Midwest     Sweet 16
+55    1         Kansas    South     Sweet 16
+56    2      Villanova    South     Sweet 16
+57    1 North Carolina     East   Final Four
+58    2       Oklahoma     West   Final Four
+59    7         Dayton  Midwest   Final Four
+60    1         Kansas    South   Final Four
+61    1 North Carolina     East    Finalists
+62    2       Oklahoma     West    Finalists
+63    2       Oklahoma     West     Champion
