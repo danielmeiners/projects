@@ -43,15 +43,15 @@ madness <- function(x) {
   }
   
   all <- rbind(madf(east),madf(west),madf(midwest),madf(south)) #this is shown in the order of east vs south, west vs midwest btw
-  first <- all[c(1:8,16:23,31:38,46:53),]
-  first$Group <- "First Round"
-  #first
-  second <- all[c(9:12,24:27,39:42,54:57),]
+  second <- all[c(1:8,16:23,31:38,46:53),]
   second$Group <- "Second Round"
   #second
-  sweet <- all[c(13,14,28,29,43,44,58,59),]
+  sweet <- all[c(9:12,24:27,39:42,54:57),]
   sweet$Group <- "Sweet 16"
   #sweet
+  elite <- all[c(13,14,28,29,43,44,58,59),]
+  elite$Group <- "Elite 8"
+  #elite
   f4 <- all[c(15,30,45,60),]
   f4$Group <- "Final Four"
   #f4
@@ -80,7 +80,7 @@ madness <- function(x) {
   champ$Group <- "Champion"
   #champ
   
-  bracket <- rbind(first,second,sweet,f4,finalists,champ)
+  bracket <- rbind(second,sweet,elite,f4,finalists,champ)
   rownames(bracket) <- NULL
   bracket
   
