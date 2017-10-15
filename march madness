@@ -89,7 +89,7 @@ madness <- function(x) {
 #RUN THE FUNCTION
 madness()
 
- Seed             Name Division        Group
+   Seed             Name Division        Group
 1     1   North Carolina     East Second Round
 2     2           Xavier     East Second Round
 3     3    West Virginia     East Second Round
