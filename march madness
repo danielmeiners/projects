@@ -1,6 +1,71 @@
 #READ IN DATA
 #read in 2016 data
-mad <- read.csv("2016data.txt", header=TRUE, sep=",")
+mad <- read.table(text="
+                Seed,Name,Division
+                1,North Carolina,East
+                2,Xavier,East
+                3,West Virginia,East
+                4,Kentucky,East
+                5,Indiana,East
+                6,Notre Dame,East
+                7,Wisconsin,East
+                8,USC,East
+                9,Providence,East
+                10,Pittsburgh,East
+                11,Michigan,East
+                12,Chattanooga,East
+                13,Stony Brook,East
+                14,Steph. F. Austin,East
+                15,Weber State,East
+                16,FGCU,East
+                1,Oregon,West
+                2,Oklahoma,West
+                3,Texas A&M,West
+                4,Duke,West
+                5,Baylor,West
+                6,Texas,West
+                7,Oregon State,West
+                8,Saint Joseph`s,West
+                9,Cincinnati,West
+                10,VCU,West
+                11,UNI,West
+                12,Yale,West
+                13,UNCW,West
+                14,Green Bay,West
+                15,CSU Bakersfield,West
+                16,Holy Cross,West
+                1,Virginia,Midwest
+                2,Michigan State,Midwest
+                3,Utah,Midwest
+                4,Iowa State,Midwest
+                5,Purdue,Midwest
+                6,Seton Hall,Midwest
+                7,Dayton,Midwest
+                8,Texas Tech,Midwest
+                9,Butler,Midwest
+                10,Syracuse,Midwest
+                11,Gonzaga,Midwest
+                12,Little Rock,Midwest
+                13,Iona,Midwest
+                14,Iowa State,Midwest
+                15,Middle Tenn.,Midwest
+                16,Hampton,Midwest
+                1,Kansas,South
+                2,Villanova,South
+                3,Miami (Fla.),South
+                4,California,South
+                5,Maryland,South
+                6,Arizona,South
+                7,Iowa,South
+                8,Colorado,South
+                9,Connecticut,South
+                10,Temple,South
+                11,Wichita State,South
+                12,South Dakota St.,South
+                13,Hawaii,South
+                14,Buffalo,South
+                15,UNC Asheville,South
+                16,Austin Peay,South", header=TRUE,sep=",")
 
 #separate into divisions
 west <- mad[mad$Division=="West",]
